@@ -13,7 +13,7 @@ form.addEventListener('submit', (event) => {
 	form.reset();
 });
 
-let capturarDatos = (nombre, apellido, mail, motivo, mensaje) => ({
+const capturarDatos = (nombre, apellido, mail, motivo, mensaje) => ({
 	nombre,
 	apellido,
 	mail,
@@ -21,7 +21,7 @@ let capturarDatos = (nombre, apellido, mail, motivo, mensaje) => ({
 	mensaje,
 });
 
-let generarAlert = (datos) => {
+const generarAlert = (datos) => {
 	alert(
 		`DE: ${datos.nombre} ${datos.apellido} (${datos.mail})\n- ASUNTO: ${datos.motivo}\n- MENSAJE: \n${datos.mensaje}.`
 	);
