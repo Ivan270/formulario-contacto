@@ -2,20 +2,24 @@ let form = document.querySelector('form');
 
 form.addEventListener('submit', (event) => {
 	event.preventDefault();
-	let datosFormulario = capturarDatos();
+	let datosFormulario = capturarDatos(
+		usuarioNombre.value,
+		usuarioApellido.value,
+		usuarioMail.value,
+		usuarioMotivo.value,
+		usuarioMensaje.value
+	);
 	generarAlert(datosFormulario);
 	form.reset();
 });
 
-let capturarDatos = () => {
-	let datos = { nombre: '', apellido: '', mail: '', motivo: '', mensaje: '' };
-	datos.nombre = usuarioNombre.value;
-	datos.apellido = usuarioApellido.value;
-	datos.mail = usuarioMail.value;
-	datos.motivo = usuarioMotivo.value;
-	datos.mensaje = usuarioMensaje.value;
-	return datos;
-};
+let capturarDatos = (nombre, apellido, mail, motivo, mensaje) => ({
+	nombre,
+	apellido,
+	mail,
+	motivo,
+	mensaje,
+});
 
 let generarAlert = (datos) => {
 	alert(
